@@ -1,0 +1,46 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1784182110259
+	},
+	"gemini": true,
+	"usage": true,
+	"analytics-uuid": "f204584a-c93b-4c8c-8dc2-bbd827e11971",
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "116656296688887006578",
+		"email": "officialfindoraapp@gmail.com",
+		"email_verified": true,
+		"at_hash": "OL-xpsKNVeNHwgXN42pXMQ",
+		"iat": 1783842822,
+		"exp": 1783846422
+	},
+	"tokens": {
+		"expires_at": 1784185708912,
+		"refresh_token": "1//0gfZfkX0kQ8y_CgYIARAAGBASNwF-L9IruisfH2dN0mrt4fOkro6ttH-1NS5xeLGpb-J_ZrAa26Dd3nxJSZ_c8CHUcA6bsvI13vk",
+		"scopes": [],
+		"access_token": "ya29.a0ARGnu0bVBQcsuwtUBFTyZTfEPTnb2k6S90OFfUYb2yY4PFh03OPzdVjZGv-U9ON7vlN2-wFeAEyG3upf__4BibqKoT7sYNNLJBMsTtPyCfcd41d5mnyh6kTJj-vsqvp367_KziQE4bDCoUrHowNqqfv2KK7GVT_mLM-qoZlqhhWClCZcj2Toi75c0ZHc3utWVv3A2QAPcXqcDwaCgYKAaYSARYSFQHGX2MieQGp6vEZhg3bjhLoUjFwJA0213",
+		"expires_in": 3599,
+		"scope": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/userinfo.email openid",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjU4OTYyMjUzMjk3OTQzNDZiMDYzOWU2ZjlkN2JkOGJjZTI5NTRmZDIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE2NjU2Mjk2Njg4ODg3MDA2NTc4IiwiZW1haWwiOiJvZmZpY2lhbGZpbmRvcmFhcHBAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJrX2JaR2poSzd0MzFiSmJXZ3RZUlpBIiwiaWF0IjoxNzg0MTgyMTA5LCJleHAiOjE3ODQxODU3MDl9.NowAVaT6rNeaJV1i1igHrGlqU8bMmGyD2qYrb_C_D4p3fcYlOfGV-URbLNk9XotoKLSJ3sUBhVj3Bh4LZGnMbYWOV_7oupVBdps6JTKwKSErWrFB_ckD7zpINyinDtecnAIjWWEB2Y8g_DTz5lN496hmK1UP-J9RDy108BHb48zExFXeWmWlVMz7-X11R3KFRHgG0IZzWDuFRl5Aln6mPs9l_WLswd3RQMMJVpSuz1H8jO0TuLYmtfz1bfaUKAPtW6_jLonRxaCzq8-Yincd5fV0QHCB-SNBbDR8d8G84LsUWGEFYJNjUB4aBfAVIhQtHRz5in_eis3KuQ4Gw0Dw_g"
+	},
+	"loginScopes": [
+		"email",
+		"openid",
+		"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+		"https://www.googleapis.com/auth/firebase",
+		"https://www.googleapis.com/auth/cloud-platform"
+	],
+	"activeProjects": {
+		"/home/officialfindoraapp": "findoraapp-dd28e"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "FindoraApp",
+  "description": "A professional device security and tracking application helping users protect, track, and recover their Android devices with live location, notifications, and security management.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

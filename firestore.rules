@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net: Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Global Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    function incoming() {
+      return request.resource.data;
+    }
+
+    // 2. Users Collection
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    // 3. Devices Collection
+    match /devices/{deviceId} {
+      allow read, write: if isSignedIn();
+    }
+
+    // 4. Location History subcollection for device
+    match /devices/{deviceId}/location_history/{historyId} {
+      allow read, write: if isSignedIn();
+    }
+
+    // 5. User Notifications subcollection
+    match /users/{userId}/notifications/{notificationId} {
+      allow read, write: if isOwner(userId);
+    }
+  }
+}

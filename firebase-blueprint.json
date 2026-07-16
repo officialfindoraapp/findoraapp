@@ -1,0 +1,89 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "User profile containing identity information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The unique user ID" },
+        "email": { "type": "string", "description": "The user's email address" },
+        "displayName": { "type": "string", "description": "The user's display name", "maxLength": 100 },
+        "phoneNumber": { "type": "string", "description": "The user's phone number", "maxLength": 20 },
+        "createdAt": { "type": "string", "description": "Timestamp when the user registered" }
+      },
+      "required": ["uid", "email"]
+    },
+    "device": {
+      "title": "Device",
+      "description": "A protected device linked to a user",
+      "type": "object",
+      "properties": {
+        "deviceId": { "type": "string", "description": "The unique device ID", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "deviceName": { "type": "string", "description": "Human readable name of the device", "maxLength": 100 },
+        "deviceModel": { "type": "string", "description": "Model of the device", "maxLength": 100 },
+        "androidVersion": { "type": "string", "description": "Android OS version of the device", "maxLength": 50 },
+        "batteryPercentage": { "type": "integer", "description": "Current battery level percentage" },
+        "isCharging": { "type": "boolean", "description": "Whether the device is plugged in" },
+        "isOnline": { "type": "boolean", "description": "Online / Offline state of the device" },
+        "lastSyncTime": { "type": "string", "description": "ISO timestamp of last communication" },
+        "latitude": { "type": "number", "description": "Last known latitude coordinate" },
+        "longitude": { "type": "number", "description": "Last known longitude coordinate" },
+        "locationAccuracy": { "type": "number", "description": "GPS precision accuracy in meters" },
+        "ownerId": { "type": "string", "description": "The UID of the user who owns this device", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "phoneNumber": { "type": "string", "description": "The phone number associated with the device", "maxLength": 20 },
+        "isLocked": { "type": "boolean", "description": "Whether the device is locked remotely" },
+        "lockMessage": { "type": "string", "description": "The message shown on the locked screen" }
+      },
+      "required": ["deviceId", "deviceName", "ownerId", "latitude", "longitude"]
+    },
+    "historyItem": {
+      "title": "HistoryItem",
+      "description": "A location history track item for a device",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique history item ID", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "deviceId": { "type": "string", "description": "The ID of the device", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "latitude": { "type": "number", "description": "Latitude coordinate at this point" },
+        "longitude": { "type": "number", "description": "Longitude coordinate at this point" },
+        "timestamp": { "type": "string", "description": "ISO or formatted timestamp of the reading" },
+        "batteryLevel": { "type": "integer", "description": "Battery percentage at the time" },
+        "status": { "type": "string", "description": "Online/Offline status", "enum": ["Online", "Offline"] },
+        "addressName": { "type": "string", "description": "Geocoded address or place name", "maxLength": 200 },
+        "ownerId": { "type": "string", "description": "The UID of the user who owns the device", "pattern": "^[a-zA-Z0-9_\\-]+$" }
+      },
+      "required": ["id", "deviceId", "latitude", "longitude", "timestamp", "ownerId"]
+    },
+    "notification": {
+      "title": "Notification",
+      "description": "An app notification delivered to the user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique notification ID", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "description": "The UID of the recipient user", "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "title": { "type": "string", "description": "Title of the notification", "maxLength": 100 },
+        "body": { "type": "string", "description": "Body content of the notification", "maxLength": 500 },
+        "timestamp": { "type": "string", "description": "Time of receipt" },
+        "read": { "type": "boolean", "description": "Read status flag" }
+      },
+      "required": ["id", "userId", "title", "body", "timestamp", "read"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "user",
+      "description": "User profiles"
+    },
+    "devices/{deviceId}": {
+      "schema": "device",
+      "description": "Devices linked to their owner"
+    },
+    "devices/{deviceId}/history/{historyId}": {
+      "schema": "historyItem",
+      "description": "Location history records for a device"
+    },
+    "users/{userId}/notifications/{notificationId}": {
+      "schema": "notification",
+      "description": "FCM notifications received by the user"
+    }
+  }
+}

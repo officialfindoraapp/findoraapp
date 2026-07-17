@@ -87,3 +87,40 @@
     </script>
   </body>
 </html>
+<!-- Refer & Earn Box Start -->
+<div id="refer-earn-box" style="background: #f0f7ff; border: 2px dashed #007bff; padding: 20px; border-radius: 10px; text-align: center; margin: 20px auto; max-width: 450px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+  <h3 style="color: #007bff; margin-top: 0; font-size: 22px;">🎁 Refer & Earn</h3>
+  <p style="color: #333; font-size: 16px;">તમારા મિત્રને રેફર કરો અને મેળવો <br><strong style="color: #ff5722; font-size: 18px;">10 દિવસની વધારાની ફ્રી ટ્રાયલ!</strong></p>
+  
+  <div style="margin: 15px 0;">
+    <input type="text" id="referral-link" value="https://findoraapp-dd28e.web.app/?ref=user_id" readonly style="width: 85%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; text-align: center; font-size: 14px; background: #fff;">
+  </div>
+  
+  <button onclick="copyReferralLink()" style="background: #007bff; color: white; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 15px; transition: 0.3s;">
+    Copy Referral Link
+  </button>
+  <p id="copy-status" style="color: #4caf50; font-size: 14px; margin-top: 10px; display: none; font-weight: bold;">લિંક કોપી થઈ ગઈ છે! મિત્રો સાથે શેર કરો 👍</p>
+</div>
+
+<script>
+  function copyReferralLink() {
+    var copyText = document.getElementById("referral-link");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* Mobile માટે */
+    navigator.clipboard.writeText(copyText.value);
+    
+    var status = document.getElementById("copy-status");
+    status.style.display = "block";
+    setTimeout(function() { status.style.display = "none"; }, 3000);
+  }
+</script>
+<!-- Refer & Earn Box End -->
+<div id="refer-earn-box" style="background: #f0f7ff; ...">
+    ...
+  </div>
+  <script>
+    function copyReferralLink() { ... }
+  </script>
+
+</body>
+</html>
